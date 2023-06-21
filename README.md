@@ -66,3 +66,92 @@ Geralmente cada microservice tem seu próprio banco de dados deixando o serviço
 - O processo de Content Negotiation é baseado na requisição que o client está fazendo para o server. Nesse caso ele solicita o que e como ele quer a resposta. O server retornará ou não a informação no formato desejado;
 - Client solicita a informação e o tipo de retorno pelo server baseado no media type informado por ordem de prioridade;
 - Através de um content-type no header da request, o servidor consegue verificar se ele irá conseguir processar a informação para retornar a informação desejada;
+
+#### O que é gRPC?
+- gRPC é um framework desenvolvido pela google que tem o objetivo de facilitar o processo de comunicação entre sistemas de uma ferramenta rápida, leve, independente de linguagem.
+- Faz parte da CNCF (Cloud Native Computing Foundation).
+
+#### Em quais casos podemos utilizar?
+- Ideal para microserviços;
+- Mobile, Browsers e Backend;
+- Geração das bibliotecas de forma automática;
+- Streaming bidirecional utilizando HTTP/2;
+
+#### Linguagens (Suporte Oficial)
+- gRPC-GO;
+- gRPC-Java;
+- gRPC-C;
+    - C++;
+    - Python;
+    - Ruby;
+    - Objective C;
+    - PHP;
+    - C#;
+    - NodeJs;
+    - Dart;
+    - Kotlin / JVM;
+
+#### Protocol Buffers x JSON
+- Arquivos binários < JSON;
+- Processo de serialização é mais leve (CPU) do que JSON;
+- Gasta menos recursos de rede;
+- Prcesso é mais veloz;
+
+#### HTTP/2
+- Nome original criado pela Google era SPDY;
+- Lançado em 2015;
+- Dados trafegados são binários e não texto como no HTTP 1.1;
+- Utiliza a mesma conexão TCP para enviar e receber dados do cliente e do servidor (Multiplex);
+- Server Push;
+- Headers são comprimidos;
+- Gasta menos recursos de rede;
+- Processo é mais veloz;
+
+#### gRPC - API 'unary'
+#### gRPC - API 'Server streaming'
+#### gRPC - API 'Client streaming'
+#### gRPC - API 'Bi directional streaming'
+
+#### REST
+- Texto / JSON;
+- Unidirecional;
+- Alta latência;
+- Sem contrato (maior chance de erros);
+- Sem suporte a streaming (Request / Response);
+- Design pré-definido;
+- Bibliotecas de terceiro;
+
+#### gRPC
+- Protocol buffers;
+- Bidirecional e Assíncrono;
+- Baixa latência;
+- Contrato definido (.proto);
+- Suporte a streaming;
+- Design livre;
+- Geração de código;
+
+#### Service Discovery
+- Descobre as máquinas disponíveis para acesso;
+- Segmentação de máquinas para garantir segurança;
+- Resolução via DNS;
+- Health check;
+- Como saber se tenho permissão para acessar;
+
+#### Hashicorp Consul
+- Service Discovery;
+- Service Segmentation;
+- Load Blancer na Borda (Layer 7);
+- Key / Value Configuration;
+- Opensource / Enterprise;
+
+#### Agent, Client e Server
+- Agent: Processo que fica sendo executado em todos os nós do cluster. Pode estar sendo executado em Client mode ou Server mode;
+- Client: Registra os serviços localmente, Health check, encaminha as informações e configurações para o Server;
+- Server: Mantém o estado do cluster, registra os serviços, Membership (quem é o client e quem é server), retorno de queries (DNS ou API), troca de informações entre datacenters, etc;
+
+#### Dev Mode
+- Nunca utilize em produção;
+- Teste de features, exemplos;
+- Roda como servidor;
+- Não escala;
+- Registra tudo em memória;
